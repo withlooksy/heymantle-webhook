@@ -1,0 +1,17 @@
+{
+  "name": "heymantle-mc-webhook",
+  "description": "Heymantle → Mission Control webhook bridge for real-time subscription alerts",
+  "repository": "https://github.com/withlooksy/heymantle-webhook",
+  "env": {
+    "HEYMANTLE_WEBHOOK_SECRET": {
+      "description": "Webhook secret from Heymantle dashboard",
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  }
+}
