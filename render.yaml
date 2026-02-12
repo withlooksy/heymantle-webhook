@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: heymantle-mc-webhook
+    runtime: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: MC_URL
+        value: https://capable-leopard-644.convex.site
+      - key: HEYMANTLE_WEBHOOK_SECRET
+        sync: false  # Will be set manually in Render dashboard
+    healthCheckPath: /health
+    autoDeploy: true
