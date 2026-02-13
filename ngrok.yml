@@ -1,0 +1,11 @@
+version: 2
+
+# Heymantle Webhook Tunnel
+# Run: ngrok start heymantle-webhook
+
+tunnels:
+  heymantle-webhook:
+    proto: http
+    addr: 5000
+    # Reserve this domain in ngrok dashboard for permanent URL
+    # domain: heymantle-webhook-YOURNAME.ngrok.io
